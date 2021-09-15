@@ -9,6 +9,7 @@
 
         </div>
 	<script>
+	var request = require("request");
         request({
                     url: "https://api.twitter.com/2/users/1275386837066854400/tweets?exclude=retweets,replies",
                     method: "GET",
