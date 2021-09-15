@@ -2,9 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="refresh" content="0;url=https://www.wadanoharasp.com/">
 		<title></title>
 	</head>
 	<body>
+        <div id="twitter">
+
+        </div>
+	<script>
+        request({
+                    url: "https://api.twitter.com/2/users/1275386837066854400/tweets?exclude=retweets,replies",
+                    method: "GET",
+                    json: true,
+                    headers: {
+                        "content-type": "application/json",
+                        "Authorization": key
+                    }
+                }, function (error, response, body) {
+                    document.getElementById("twitter").innerText = body;
+                })
+                
+    </script>
 	</body>
 </html>
