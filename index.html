@@ -9,30 +9,6 @@
 
         </div>
 	<script>
-	function handleResponse(e) {
-            if (e.target.readyState == XMLHttpRequest.DONE) {
-                document.getElementById("result").innerHTML = e.target.responseText;
-                var responseTextJson = JSON.parse(e.target.responseText);
-
-                alert(responseTextJson.length);
-                alert(responseTextJson[0].classroom);
-                //  alert(responseTextJson.DATAINFO[0].PROJ_NAME);
-            }
-        }
-
-
-        var httpRequest = new XMLHttpRequest();
-        httpRequest.onreadystatechange = handleResponse;
-        httpRequest.open("GET", "https://api.twitter.com/2/users/1275386837066854400/tweets?exclude=retweets,replies");
-        httpRequest.setRequestHeader("Content-Type", "application/json");
-        httpRequest.setRequestHeader("Authorization", "Bearer AAAAAAAAAAAAAAAAAAAAAJxhTgEAAAAAxr7fylsDHAejJ15OgJnSDpGmXZk%3De2IUTyEInGmjHnwvXISg7WAOc8PDdrbGERotaZN2yDkHlvxqhw");
-        httpRequest.send(null);
-        httpRequest.onreadystatechange = function () {
-            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-                var json = httpRequest.responseText;//获取到json字符串，还需解析
-                document.getElementById("twitter").innerHTML = json
-            }
-        };
                 
     </script>
 	</body>
